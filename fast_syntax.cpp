@@ -10,6 +10,13 @@ using Eg = Engine;
 using Scr = Script;
 
 namespace gde_fast_syntax {
+    double get_delta(Node *node) {
+        if (!UtilityFunctions::is_instance_valid(node)) {
+            return 0.0;
+        }
+        return Engine::get_singleton()->is_in_physics_frame() ? node->get_physics_process_delta_time() : node->get_process_delta_time();
+    }
+
     bool is_running_mode(Node *node) {
         if (!GD::is_instance_valid(node)) {
             return false;

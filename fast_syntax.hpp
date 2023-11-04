@@ -11,6 +11,8 @@
 using namespace godot;
 
 namespace gde_fast_syntax {
+    double get_delta(Node *node);
+
     bool is_running_mode(Node *node);
     bool is_collision_shape_showable(Node2D *node2d, Ref<Shape2D> &shape);
 }
